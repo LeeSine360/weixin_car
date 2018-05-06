@@ -1,0 +1,65 @@
+<view class='body'>
+  <view class='table'>
+    <view class='tr'>
+      <view class='td w25 bg_color_bold'>车价</view>
+      <view class='td w30 font_bold'>{{chejia}}</view>
+      <view class='td w25 bg_color_bold'>贷款方案</view>
+      <view class='td w30 font_bold'>{{fangan}}</view>
+    </view>
+    <view class='tr'>
+      <view class='td w25 bg_color_bold'>首付</view>
+      <view class='td w30 font_bold'>{{shouFu}}</view>
+      <view class='td w25 bg_color_bold'>贷款额</view>
+      <view class='td w30 font_bold'>{{daiKuanJinE}}</view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>保证金</view>
+      <view class='td w100'>{{baoZhengJin}} (可退)</view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>续保押金</view>
+      <view class='td w100'>{{xbyj}} (第二年续保可抵)</view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>GPS</view>
+      <view class='td w100'>{{gps}} </view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>调查费</view>
+      <view class='td w100'>{{dcf}} </view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>手续费</view>
+      <view class='td w100'>{{sxf}} </view>
+    </view>
+    <view class='tr'>
+      <view class='td w35 bg_color'>抵押公证费</view>
+      <view class='td w100'>{{dygzf}} </view>
+    </view>
+    <view class='tr'>
+    <view class='td w35 bg_color'>保险</view>
+      <view class='td w100'>{{bx}} (以发票为准)</view>
+    </view>
+    <view class='tr'>
+    <view class='td w35 bg_color'>购置税</view>
+      <view class='td w100'>{{gzs}} (以发票为准)</view>
+    </view>
+    <view class='tr'>
+    <view class='td w35 bg_color'>上户费</view>
+      <view class='td w100'>{{shf}}</view>
+    </view>
+    <view class='tr'>
+      <view class='td w100 bg_color font_bold'>前期费用合计</view>
+      <view class='td w100 font_big'>{{qianqiheji}}</view>
+    </view>
+    <view class='tr'>
+      <view class='td w25 bg_color font_bold'>还款期数</view>
+      <view class='td w30 font_big'>{{qixian}}</view>
+      <view class='td w25 bg_color font_bold'>每月还款</view>
+      <view class='td w30 font_big'>{{yuehuan}}</view>
+    </view>
+  </view>
+</view>
+<view class='footer' bindtap='onShareAppMessage'>
+    <button open-type="share" class='share_button'>方案分享</button>
+</view>

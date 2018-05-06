@@ -1,0 +1,16 @@
+<template name='showModel'>
+  <view animation="{{animationData}}" class='sm_body'>
+    <image class='sm_img' src='{{modalButtonImg}}' bindtap='openModal'></image>
+    <view class='sm_container'>
+      <view class='sm_title'>
+        <text>以便让我们为您提供更加完善的服务,请留下您宝贵的意见和建议。</text>
+      </view>
+      <view class='sm_text'>
+        <textarea maxlength='150' fixed='true' bindinput='textAreaInput'></textarea>
+      </view>
+      <view class='sm_button'>
+        <button bindtap='onSuggestClick'>提交</button>
+      </view>
+    </view>
+  </view>
+</template>

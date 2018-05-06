@@ -1,0 +1,17 @@
+<template name="footer">
+  <view class='footer'>
+    <view class='footer_container'>
+      <view class='footer_reset' bindtap='resetOnClick'>
+        <view class='footer_reset_item'>重置</view>
+      </view>
+      <view class='footer_cal {{jiSuanButton.jsClass}}'>
+        <block wx:if="{{userInfo.nickName!=null}}">
+          <view class='footer_cal_bt' bindtap='jiSuanButton'>{{jiSuanButton.calLoading}}</view>
+        </block>
+        <block wx:if="{{userInfo.nickName==null}}">
+          <button class='footer_auth_bt' open-type="getUserInfo" bindgetuserinfo="userInfoHandler">点击授权</button>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

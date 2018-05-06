@@ -1,0 +1,9 @@
+<template name="content_list">
+    <view class='content_list'>
+      <text class='content_list_name'>{{list_name}}</text>
+      <view class='content_list_item {{highLight}}'>
+        <input id="{{id}}" type='{{type}}' value="{{value}}" maxlength='6' bindfocus='{{click}}' bindblur="{{click}}" bindinput='{{click}}'></input>
+        <text>{{Company}}</text>
+      </view>
+    </view>
+</template>

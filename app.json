@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+   "pages/second/second",
+    "pages/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车辆融资计算器",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,31 @@
+<template name='result'>
+  <view class='container_result'>
+    <view class='result_content_title'>计算结果 :</view>
+    <view class='result_content'>
+      <view class='result_content_item'>
+        <view>{{yueHuanJinE}} <text class='unit'>元</text></view>
+        <view class='result_content_item_text'>月还金额</view>
+      </view>
+      <!-- <view class="result_content_item_middle"></view> -->
+      <view class='result_content_item'>
+        <view>{{yueLiLv}} <text class='unit'>%</text></view>
+        <view class='result_content_item_text'>月利率</view>
+      </view>
+    </view>
+    <view class='details_content_title'>详情 :</view>
+    <view class='details_content'>
+      <view class='details_content_item'>
+        <text class='details_content_item_name'>贷款总额 :</text>
+        <text class='details_content_item_money'>{{daiKuanJinE}} 元</text>
+      </view>
+      <view class='details_content_item'>
+        <text class='details_content_item_name'>还款总额 :</text>
+        <text class='details_content_item_money'>{{huanKuanZongE}} 元</text>
+      </view>
+      <view class='details_content_item'>
+        <text class='details_content_item_name'>利息总额 :</text>
+        <text class='details_content_item_money'>{{liXi}} 元</text>
+      </view>
+    </view>
+  </view>
+</template>

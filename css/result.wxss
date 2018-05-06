@@ -1,0 +1,63 @@
+.container_result {
+  margin: 0;
+  color: #2f2a42;
+}
+.result_content_title{
+  padding: 20rpx 50rpx 0rpx;
+  font-size: 30rpx;
+}
+.result_content {
+  margin: 20rpx 50rpx 50rpx;
+  border-radius: 5rpx;
+  box-shadow: 0 0 10rpx 4rpx rgba(138, 241, 213, 0.6);
+  display: flex;
+  padding: 30rpx 60rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.result_content_item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 45rpx;
+}
+.unit{
+  font-size: 30rpx;
+}
+.result_content_item_middle {
+  width: 0rpx;
+  border-left: solid 1rpx #2f2a42;
+  opacity: 0.2;
+  padding: 0rpx;
+}
+.result_content_item_text {
+  display: flex;
+  justify-content: center;
+  font-size: 25rpx;
+}
+.details_content_title{
+  padding: 20rpx 50rpx 0rpx;
+  font-size: 30rpx;
+  border-top: solid 2rpx #fff;
+}
+.details_content{
+  margin: 20rpx;
+  padding: 10rpx 10rpx;
+  font-size: 25rpx;
+  background-color: #fff;
+}
+.details_content_item{
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx;
+  opacity: 0.6;
+  border-bottom: dotted 1rpx #ddd;
+  padding-bottom: 8rpx;
+}
+.details_content_item_name{
+  margin-left: 20rpx;
+}
+.details_content_item_money{
+  margin-right: 20rpx;
+}

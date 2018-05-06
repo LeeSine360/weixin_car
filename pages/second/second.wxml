@@ -1,0 +1,34 @@
+<import src="../../template/content_list.wxml" />
+<view class='body'>
+  <view class="container">
+    <block wx:for="{{content_list}}" wx:key="id">
+      <template is="content_list" data="{{...item}}"></template>
+    </block>
+  </view>
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-content">
+    <view>手续费 = 贷款额 * </view>
+    <view class="modal-input">
+      <input  type="digit" maxlength="10" bindinput="inputChange" focus='true' class="input" maxlength='2'></input>
+      <text class='input-unit'>%</text>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+<!--弹窗结束-->
+<view class='footer'>
+  <view class='footer_container'>
+    <view class='footer_reset' bindtap='onResetClick'>
+      <view class='footer_reset_item'>重置</view>
+    </view>
+    <view class='footer_cal' bindtap='onButtonClick'>
+      <view class='footer_cal_item'>下一步</view>
+    </view>
+  </view>
+</view>

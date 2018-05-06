@@ -1,0 +1,22 @@
+<import src="../../template/header.wxml" />
+<import src="../../template/content_list.wxml" />
+<import src="../../template/result.wxml" />
+<import src="../../template/footer.wxml" />
+<import src="../../template/showModel.wxml" />
+<view class='mask' wx:if="{{showModalStatus}}" bindtap='openModal'></view>
+<view class='body'>
+  <view class="container">
+    <block wx:for="{{content_list}}" wx:key="id">
+      <template is="content_list" data="{{...item}}"></template>
+    </block>
+  </view>
+  <view class='bottom'>
+    <template is='result' data="{{huanKuanZongE,daiKuanJinE,liXi,yueHuanJinE,yueLiLv}}"></template>
+  </view>
+  <view class='author'>
+    <text class='author_title'>作者联系方式:</text>
+    <text class='author_content'>微信号lgs361</text>
+  </view>
+  <template is='footer' data='{{userInfo,jiSuanButton}}'></template>
+</view>
+<template is='showModel' data='{{animationData,modalButtonImg}}'></template>

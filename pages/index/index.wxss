@@ -1,0 +1,34 @@
+/**index.wxss**/
+@import "../../css/content_list.wxss";
+@import "../../css/footer.wxss";
+@import "../../css/result.wxss";
+@import "../../css/showModel.wxss";
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 248, 248, 0.5);
+  z-index: 10;
+}
+.body{
+  padding-top:30rpx;
+}
+.container {
+  padding: 0 80rpx 30rpx;
+  font-size: 36rpx;
+}
+.bottom{ 
+  margin: 0rpx 20rpx;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+.author{
+  margin: 0rpx 20rpx 200rpx;
+  padding: 20rpx 50rpx;
+  background-color: #f8f8f8;
+  border-top: solid 2rpx #fff;
+  font-size: 25rpx;
+}
+.author_content{
+  margin: 0 30rpx;
+}
