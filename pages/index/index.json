@@ -1,7 +1,5 @@
 {
   "navigationBarBackgroundColor": "#564e65",
   "navigationBarTitleText": "车辆融资计算",
-  "navigationBarTextStyle": "#ffffff",
-  "backgroundTextStyle": "light",
-  "backgroundColor": "#564e65"
+  "navigationBarTextStyle": "#ffffff"
 }

@@ -30,12 +30,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "update",
-					"pathName": "pages/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
 				}
 			]
 		}
