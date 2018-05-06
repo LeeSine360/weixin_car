@@ -13,17 +13,20 @@
 .body{
   padding-top:30rpx;
 }
+.body-context{
+  margin-bottom: 200rpx;
+}
 .container {
   padding: 0 80rpx 30rpx;
   font-size: 36rpx;
 }
-.bottom{ 
+.result{ 
   margin: 0rpx 20rpx;
   background-color: #f8f8f8;
   height: 100%;
 }
 .author{
-  margin: 0rpx 20rpx 200rpx;
+  margin: 0rpx 20rpx;
   padding: 20rpx 50rpx;
   background-color: #f8f8f8;
   border-top: solid 2rpx #fff;
