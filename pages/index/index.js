@@ -4,6 +4,7 @@ var c_showBox = require('../../utils/showBox')
 var d_index_data = require('../../data/index_data')
 var p_index = require('../../utils/p_index')
 var c_modal = require('../../utils/modal')
+var c_hint = require('../../utils/hint.js')
 
 const app = getApp()
 var globalData = app.globalData
@@ -68,6 +69,12 @@ Page({
       success: function(res) {
         animationShowHeight=res.screenHeight
       },
+    })
+    app.getAUTH(function (res) {
+      var hintMsg = res.data.hint
+      if (hintMsg){
+        c_hint.showHint(hintMsg)
+      }
     })
   },
   onShareAppMessage: function (res) {
