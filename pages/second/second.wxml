@@ -13,7 +13,7 @@
   <view class="modal-content">
     <view>手续费 = 贷款额 * </view>
     <view class="modal-input">
-      <input  type="digit" maxlength="10" bindinput="inputChange" focus='true' class="input" maxlength='2'></input>
+      <input  type="digit" maxlength="10" bindinput="inputChange" focus='true' class="input" maxlength='4'></input>
       <text class='input-unit'>%</text>
     </view>
   </view>
