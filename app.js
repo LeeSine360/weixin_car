@@ -2,6 +2,7 @@ var c_login = require('utils/login.js')
 var c_request = require('utils/request.js')
 var c_version = require('utils/version.js')
 var c_update = require('utils/update.js')
+var c_showBox = require('utils/showBox.js')
 
 App({
   onLaunch: function () {
@@ -24,8 +25,9 @@ App({
       } else {
         typeof fc == "function" && fc(that.globalData.userInfo)
       }
+      that.globalData.networkStatus = true
     }
-    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func)
+    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func,this.err)
   },
   login: function (fc) {
     var that = this
@@ -46,15 +48,21 @@ App({
         wx.setStorageSync('sessionId', res.data)
         that.globalData.userId = res.data
         console.log('login() session_id:' + that.globalData.userId)
+        that.globalData.networkStatus = true
       }
-      c_request.request(that.globalData.url_login, userData, func)
+
+      c_request.request(that.globalData.url_login, userData, func,that.err)
     })
   },
   getAUTH: function (func) {
-    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func)
+    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func,this.err)
+  },
+  err: function (e) {
+    this.globalData.networkStatus = false
+    c_showBox.showToast('网络不可用,请检查!', 'none', 2000)
   },
   globalData: {
-    version:'',
+    networkStatus:true,//网络状态，默认true可用
 
     url_login: "https://www.lee361.com/wxphp/login.php",//登录地址
     url_checkLogin: "https://www.lee361.com/wxphp/checkLogin.php",//检查用户登录状态地址

@@ -103,7 +103,7 @@ Page({
     id == 'xuBaoYaJin' && (globalData.xuBaoYaJin = e.detail.value)
     id == 'gps' && (globalData.gps = e.detail.value)
     id == 'diaoChaFei' && (globalData.diaoChaFei = e.detail.value)
-    
+
     id == 'diYaGongZhengFei' && (globalData.diYaGongZhengFei = e.detail.value)
     id == 'baoXianFei' && (globalData.baoXianFei = e.detail.value)
     id == 'gouZhiShui' && (globalData.gouZhiShui = e.detail.value)
@@ -126,11 +126,16 @@ Page({
       shf: globalData.shangHuFei
     }
 
-    c_request.request(globalData.url_update, data, function (res) { console.log(res) })
+    c_request.request(globalData.url_update, data, function (res) { 
+      app.globalData.networkStatus = true
+      console.log(res)
+     }, app.err)
 
-    wx.navigateTo({
-      url: '../result/result'
-    })
+    if (app.globalData.networkStatus) {
+      wx.navigateTo({
+        url: '../result/result'
+      })
+    }
   },
   onResetClick: function (e) {
     //重置按钮
@@ -174,7 +179,7 @@ Page({
    * 对话框输入框事件
    */
   inputChange: function (e) {
-    var value = e.detail.value/100
+    var value = e.detail.value / 100
     var result = globalData.cheJia * (1 - globalData.shouFu) * value
     this.setData({
       'content_list[3].value': (result).toFixed(2)

@@ -22,8 +22,6 @@ var animationShowHeight = 0//建议对话框动画
 
 var auth = {} //用户权限
 
-var calIsOk = false //判断网络是否可用 false 不可用, true 可用
-
 Page({
   data: {
     huanKuanZongE: 0,//还款总额
@@ -76,14 +74,6 @@ Page({
       var hintMsg = res.data.hint
       if (hintMsg){
         c_hint.showHint(hintMsg)
-      }
-    })
-    wx.onNetworkStatusChange(function (res) {
-      if(!res.isConnected){
-        c_showBox.showToast('网络不可用，请检查!', 'none', 2000)
-        calIsOk = false
-      }else{
-        calIsOk = true
       }
     })
   },
@@ -195,7 +185,8 @@ Page({
       that.setData({
         'jiSuanButton.calLoading': '下一步'
       })
-    })
+      app.globalData.networkStatus = true
+    },app.err)
 
     globalData.cheJia = cheJia//车价
     globalData.shouFu = shouFu//首付
@@ -207,10 +198,7 @@ Page({
   },
   jiSuanButton: function (e) {
     //点击计算按钮是触发
-    if (!calIsOk){
-      c_showBox.showToast('网络不可用，请检查!', 'none', 2000)
-      return
-    }
+    
     if (!cheJia || !irr || !qiXian) {
       c_showBox.showToast('输入信息有误！', 'none', 2000)
       return
