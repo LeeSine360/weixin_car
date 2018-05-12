@@ -127,15 +127,10 @@ Page({
     }
 
     c_request.request(globalData.url_update, data, function (res) { 
-      app.globalData.networkStatus = true
-      console.log(res)
-     }, app.err)
-
-    if (app.globalData.networkStatus) {
       wx.navigateTo({
         url: '../result/result'
       })
-    }
+     }, app.err)
   },
   onResetClick: function (e) {
     //重置按钮

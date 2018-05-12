@@ -186,7 +186,6 @@ Page({
       that.setData({
         'jiSuanButton.calLoading': lang.NEXT_TEXT
       })
-      app.globalData.networkStatus = true
     },app.err)
 
     globalData.cheJia = cheJia//车价

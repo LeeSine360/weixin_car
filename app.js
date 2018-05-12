@@ -25,9 +25,8 @@ App({
       } else {
         typeof fc == "function" && fc(that.globalData.userInfo)
       }
-      that.globalData.networkStatus = true
     }
-    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func,this.err)
+    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func,that.err)
   },
   login: function (fc) {
     var that = this
@@ -48,7 +47,6 @@ App({
         wx.setStorageSync('sessionId', res.data)
         that.globalData.userId = res.data
         console.log('login() session_id:' + that.globalData.userId)
-        that.globalData.networkStatus = true
       }
 
       c_request.request(that.globalData.url_login, userData, func,that.err)
@@ -58,12 +56,9 @@ App({
     c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func,this.err)
   },
   err: function (e) {
-    this.globalData.networkStatus = false
     c_showBox.showToast(NETWORK_ERROR, 'none', 2000)
   },
   globalData: {
-    networkStatus:true,//网络状态，默认true可用
-
     url_login: "https://www.lee361.com/wxphp/login.php",//登录地址
     url_checkLogin: "https://www.lee361.com/wxphp/checkLogin.php",//检查用户登录状态地址
     url_config: "https://www.lee361.com/wxphp/getConfig.php",//获取用户授权信息地址
