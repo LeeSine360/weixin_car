@@ -3,6 +3,7 @@ var c_request = require('utils/request.js')
 var c_version = require('utils/version.js')
 var c_update = require('utils/update.js')
 var c_showBox = require('utils/showBox.js')
+var lang = require('utils/string.js')
 
 App({
   onLaunch: function () {
@@ -52,8 +53,11 @@ App({
       c_request.request(that.globalData.url_login, userData, func,that.err)
     })
   },
+  getAUTH: function (func) {
+    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func,this.err)
+  },
   err: function (e) {
-    c_showBox.showToast(NETWORK_ERROR, 'none', 2000)
+    c_showBox.showToast(lang.NETWORK_ERROR, 'none', 2000)
   },
   globalData: {
     url_login: "https://www.lee361.com/wxphp/login.php",//登录地址
