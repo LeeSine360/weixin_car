@@ -59,7 +59,7 @@ App({
   },
   err: function (e) {
     this.globalData.networkStatus = false
-    c_showBox.showToast('网络不可用,请检查!', 'none', 2000)
+    c_showBox.showToast(NETWORK_ERROR, 'none', 2000)
   },
   globalData: {
     networkStatus:true,//网络状态，默认true可用

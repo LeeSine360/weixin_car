@@ -5,6 +5,7 @@ var d_index_data = require('../../data/index_data')
 var p_index = require('../../utils/p_index')
 var c_modal = require('../../utils/modal')
 var c_hint = require('../../utils/hint.js')
+var lang = require('../../utils/string.js')
 
 const app = getApp()
 var globalData = app.globalData
@@ -32,7 +33,7 @@ Page({
     userInfo: {},//用户信息
 
     jiSuanButton: {
-      calLoading: '开始计算',//点击计算按钮的文字提示
+      calLoading: lang.START_CAL,//点击计算按钮的文字提示
       jsClass: 'footer_cal_bg'
     },
 
@@ -80,13 +81,13 @@ Page({
   onShareAppMessage: function (res) {
     //点击转发时触发
     return {
-      title: '车辆融资租赁计算器',
+      title: lang.SHARE_TITLE,
       imageUrl: '/image/share.jpg',
       success: function (res) {
-        c_showBox.showToast('转发成功', 'success', 2000)
+        c_showBox.showToast(lang.SHARE_CONTEXT_OK, 'success', 2000)
       },
       fail: function (res) {
-        c_showBox.showToast('转发失败', 'success', 2000)
+        c_showBox.showToast(lang.SHARE_CONTEXT_ERR, 'success', 2000)
       }
     }
   },
@@ -132,7 +133,7 @@ Page({
       var value = arr[i].id == 'qiXian' ? arr[i].value : ''
       this.setData({
         [inputValue]: value,
-        'jiSuanButton.calLoading': '开始计算'
+        'jiSuanButton.calLoading': lang.START_CAL
       })
     }
     nextButton = false
@@ -147,7 +148,7 @@ Page({
         c_showBox.showAUTH('提示', auth.msg)
         return
       } else {
-        that.setData({ 'jiSuanButton.calLoading': '开始计算...' })
+        that.setData({ 'jiSuanButton.calLoading': lang.STARTING_CAL })
         that.calculate()
       }
     })
@@ -183,7 +184,7 @@ Page({
     }, function (res) {
       nextButton = true
       that.setData({
-        'jiSuanButton.calLoading': '下一步'
+        'jiSuanButton.calLoading': lang.NEXT_TEXT
       })
       app.globalData.networkStatus = true
     },app.err)
@@ -200,11 +201,11 @@ Page({
     //点击计算按钮是触发
     
     if (!cheJia || !irr || !qiXian) {
-      c_showBox.showToast('输入信息有误！', 'none', 2000)
+      c_showBox.showToast(lang.INPUT_ERR, 'none', 2000)
       return
     }
     if (cheJia > 5000000 || shouFu >= 1 || baoZhengJin >= 1 || qiXian >=60 || irr >= 30) {
-      c_showBox.showToast('数字输入过大,请检查！', 'none', 2000)
+      c_showBox.showToast(lang.INPUT_DATA_ERR, 'none', 2000)
       return
     }
     if (nextButton) {
