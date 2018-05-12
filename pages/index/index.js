@@ -71,12 +71,6 @@ Page({
         animationShowHeight=res.screenHeight
       },
     })
-    app.getAUTH(function (res) {
-      var hintMsg = res.data.hint
-      if (hintMsg){
-        c_hint.showHint(hintMsg)
-      }
-    })
   },
   onShareAppMessage: function (res) {
     //点击转发时触发

@@ -52,9 +52,6 @@ App({
       c_request.request(that.globalData.url_login, userData, func,that.err)
     })
   },
-  getAUTH: function (func) {
-    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func,this.err)
-  },
   err: function (e) {
     c_showBox.showToast(NETWORK_ERROR, 'none', 2000)
   },
