@@ -10,8 +10,8 @@ App({
     //调用API从本地缓存中获取数据
     this.globalData.userInfo = wx.getStorageSync('userInfo') || {}
     this.globalData.userId = wx.getStorageSync('sessionId') || ''
-  
-    c_version.compareVersion('1.9.90') && c_update.update()
+
+    if (c_version.compareVersion('1.9.90') == 1) { c_update.update() }
   },
   onShow: function () {
     this.globalData.userInfo = this.globalData.userInfo || wx.getStorageSync('userInfo')
@@ -27,7 +27,7 @@ App({
         typeof fc == "function" && fc(that.globalData.userInfo)
       }
     }
-    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func,that.err)
+    c_request.request(this.globalData.url_checkLogin, { session_id: that.globalData.userId }, func, that.err)
   },
   login: function (fc) {
     var that = this
@@ -50,11 +50,11 @@ App({
         console.log('login() session_id:' + that.globalData.userId)
       }
 
-      c_request.request(that.globalData.url_login, userData, func,that.err)
+      c_request.request(that.globalData.url_login, userData, func, that.err)
     })
   },
   getAUTH: function (func) {
-    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func,this.err)
+    c_request.request(this.globalData.url_config, { session_id: this.globalData.userId }, func, this.err)
   },
   err: function (e) {
     c_showBox.showToast(lang.NETWORK_ERROR, 'none', 2000)
