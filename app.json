@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-   "pages/second/second",
+    "pages/second/second",
     "pages/result/result"
   ],
   "window": {

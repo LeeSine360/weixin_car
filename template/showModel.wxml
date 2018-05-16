@@ -14,3 +14,21 @@
     </view>
   </view>
 </template>
+
+<!--手续费_弹窗-->
+<template name='showShouXuFeiDialog'>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-content">
+    <view>手续费 = 贷款额 * </view>
+    <view class="modal-input">
+      <input  type="digit" maxlength="10" bindinput="inputChange" focus='true' class="input" maxlength='4'></input>
+      <text class='modal-input-unit'>%</text>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="modal-btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+</template>
+<!--手续费_弹窗结束-->

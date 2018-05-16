@@ -1,4 +1,5 @@
 @import "../../css/content_list.wxss";
+@import "../../css/showModel.wxss";
 .body{
   margin-top: 30rpx;
 }
@@ -45,79 +46,4 @@
 }
 .footer_cal:active{
   background-color: #575757;
-}
-/**弹窗**/
-.modal-mask {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.5;
-  overflow: hidden;
-  z-index: 9000;
-  color: #fff;
-}
-
-.modal-dialog {
-  width: 540rpx;
-  overflow: hidden;
-  position: fixed;
-  top: 50%;
-  left: 0;
-  z-index: 9999;
-  background: #f9f9f9;
-  margin: -180rpx 105rpx;
-  font-size: 32rpx;
-}
-.modal-content {
-  display: flex;
-  flex-direction: row;
-  padding: 50rpx 32rpx;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-input {
-  display: flex;
-  background: #fff;
-  border: 2rpx solid #ddd;
-  font-size: 38rpx;
-  width: 160rpx;
-  align-items: center;
-  margin-left: 20rpx;
-}
-.input-unit{
-  color: #ddd;
-  padding-right: 20rpx;
-}
-
-.input {
-  width: 100%;
-  height: 82rpx;
-  font-size: 38rpx;
-  line-height: 38rpx;
-  padding: 0 20rpx;
-  box-sizing: border-box;
-  color: #333;
-}
-input-holder {
-  color: #666;
-  font-size: 28rpx;
-}
-
-.modal-footer {
-  display: flex;
-  flex-direction: row;
-  height: 86rpx;
-  border-top: 1px solid #dedede;
-  font-size: 34rpx;
-  line-height: 86rpx;
-}
-.btn-confirm {
-  width: 100%;
-  color: #fff;
-  background-color: #2f2a42;
-  text-align: center;
 }

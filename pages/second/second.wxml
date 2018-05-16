@@ -1,4 +1,5 @@
 <import src="../../template/content_list.wxml" />
+<import src="../../template/showModel.wxml" />
 <view class='body'>
   <view class="container">
     <block wx:for="{{content_list}}" wx:key="id">
@@ -7,21 +8,8 @@
   </view>
 </view>
 
-<!--弹窗-->
-<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
-<view class="modal-dialog" wx:if="{{showModal}}">
-  <view class="modal-content">
-    <view>手续费 = 贷款额 * </view>
-    <view class="modal-input">
-      <input  type="digit" maxlength="10" bindinput="inputChange" focus='true' class="input" maxlength='4'></input>
-      <text class='input-unit'>%</text>
-    </view>
-  </view>
-  <view class="modal-footer">
-    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
-  </view>
-</view>
-<!--弹窗结束-->
+<template is='showShouXuFeiDialog' data="{{showModal}}"></template>
+
 <view class='footer'>
   <view class='footer_container'>
     <view class='footer_reset' bindtap='onResetClick'>
