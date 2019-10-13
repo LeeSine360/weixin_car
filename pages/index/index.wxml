@@ -21,4 +21,4 @@
    </view> 
   <template is='footer' data='{{userInfo,jiSuanButton}}'></template>
 </view>
-<template is='showModel' data='{{animationData,modalButtonImg}}'></template>
+<!--<template is='showModel' data='{{animationData,modalButtonImg}}'></template>-->

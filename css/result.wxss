@@ -50,7 +50,7 @@
 .details_content_item{
   display: flex;
   justify-content: space-between;
-  margin: 10rpx;
+  margin: 30rpx;
   opacity: 0.6;
   border-bottom: dotted 1rpx #ddd;
   padding-bottom: 8rpx;

@@ -177,9 +177,9 @@ Page({
       qixian: qiXian,
       irr: irr
     }, function (res) {
-      nextButton = true
+      //nextButton = true
       that.setData({
-        'jiSuanButton.calLoading': lang.NEXT_TEXT
+        'jiSuanButton.calLoading': lang.START_CAL
       })
     },app.err)
 
@@ -202,13 +202,14 @@ Page({
       c_showBox.showToast(lang.INPUT_DATA_ERR, 'none', 2000)
       return
     }
-    if (nextButton) {
+    /*if (nextButton) {
       wx.navigateTo({
         url: '../second/second'
       })
     }else{
       this.checkAUTH()
-    }
+    }*/
+    this.checkAUTH()
   },
   openModal:function(){
     //建议对话框打开按钮
