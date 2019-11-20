@@ -84,14 +84,5 @@ App({
     qiXian: 24, //贷款期限
     yueHuanJinE: 0, //月还金额
     irr: 0.00 //IRR
-
-    /*xuBaoYaJin: 0, //续保押金
-    gps: 0, //GPS费用
-    diaoChaFei: 0, //调查费
-    shouXuFei: 0, //手续费
-    diYaGongZhengFei: 0, //抵押公证费
-    baoXianFei: 0, //保险
-    gouZhiShui: 0, //购置税
-    shangHuFei: 0 //上户费*/
   }
 })

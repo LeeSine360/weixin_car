@@ -6,7 +6,11 @@
 <view class='mask' wx:if="{{showModalStatus}}" bindtap='openModal'></view>
 <view class='body'>
   <view class='body-context'>
+    <view class="adContainer">
+        <ad unit-id="adunit-3c3cfa215fe77e4a" ad-intervals="30"></ad>
+    </view>
     <view class="container">
+      
       <block wx:for="{{content_list}}" wx:key="id">
         <template is="content_list" data="{{...item}}"></template>
       </block>

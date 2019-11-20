@@ -10,9 +10,9 @@
   background-color: rgba(248, 248, 248, 0.5);
   z-index: 10;
 }
-.body{
+/*.body{
   padding-top:30rpx;
-}
+}*/
 .body-context{
   margin-bottom: 200rpx;
 }
@@ -34,4 +34,10 @@
 }
 .author_content{
   margin: 0 30rpx;
+}
+
+/*广告位*/
+.adContainer {
+  width: 100%;
+  margin-bottom: 20rpx;
 }
