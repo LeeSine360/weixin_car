@@ -136,7 +136,6 @@ Page({
     //检查用户使用权限
     var that = this
     app.getAUTH(function (res) {
-      console.log(res)
       qianQiFeiYong = res.data.qianQiFeiYong
       auth = res.data.auth
       if (!auth.isOk) {
